@@ -1,7 +1,7 @@
 {
   "name": "btcn3-spi",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
+ 
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.5.0",
