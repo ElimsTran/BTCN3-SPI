@@ -10,7 +10,6 @@ const ClassesArea = () => {
     {field: 'Quantity', headerName: 'Số lượng sinh viên', flex: 1,}
   ]
   useEffect(()=> {
-    if(classes.length == 0){
       var url = 'https://btcn3-api-18127141.herokuapp.com/classes';
       fetch(url)
       .then((data) => data.json())
@@ -21,7 +20,6 @@ const ClassesArea = () => {
       .catch(function(error) {
         alert(error);
       });
-    }
   })
   console.log(classes)
   return (
