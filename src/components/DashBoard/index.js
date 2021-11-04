@@ -23,7 +23,7 @@ import CreateNew from '../CreateForm'
 // export default DashBoard;
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -43,7 +43,10 @@ const styles = {
 };
 
  const DenseAppBar = (props) => {
- 
+  const [classes, setClasses] = useState([]);
+  const update = (newData) => {
+    setClasses(newData)
+  }
   return (
     <div >
       <AppBar position="static">
@@ -56,8 +59,8 @@ const styles = {
           </Typography>
         </Toolbar>
       </AppBar>
-      <ClassesArea/>
-      <CreateNew/>
+      <ClassesArea _classes = {classes}/>
+      <CreateNew callback= {update}/>
    
     </div>
   );

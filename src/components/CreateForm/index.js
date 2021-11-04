@@ -4,7 +4,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import  { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Paper from '@material-ui/core/Paper'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -34,7 +34,7 @@ function submitForm(event) {
 // export default CreateNew
 
 
-export default function CreateNew() {
+export default function CreateNew({callback}) {
     const [className, setClassName] = useState('');
     const [teacherName, setTeacherName] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -49,6 +49,7 @@ export default function CreateNew() {
   };
   const handleSubmit = (event)=> {
     submitForm(event)
+    callback()
     setOpen(false);
   }
 

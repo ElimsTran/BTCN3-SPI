@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {DataGrid} from '@material-ui/data-grid'
 
-const ClassesArea = () => {
-  const [classes, setClasses] = useState([]);
+const ClassesArea = ({_classes}) => {
+  const [classes, setClasses] = useState(_classes);
   const columns = [
     {field: 'id', headerName: 'Mã lớp' , flex: 1,},
     {field: 'Class_Name', headerName: 'Tên lớp', flex: 1,},
